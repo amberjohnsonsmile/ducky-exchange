@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Card, CardTitle, Col, Navbar, NavItem} from 'react-materialize';
+import {Card, CardTitle, Col, Navbar, NavItem, Row} from 'react-materialize';
 import logo from './logo.svg';
 import './App.css';
 
@@ -14,39 +14,41 @@ class App extends Component {
           <NavItem href="https://poloniex.com/">Poloniex</NavItem>
         </Navbar>
         <main>
-          <Col m={7} s={12}>
-            <Card
-              horizontal
-              header={<CardTitle image="./assets/louie.png" />}
-              actions={[<a href="#">This is a link</a>]}>
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information
-              </p>
-            </Card>
-          </Col>
-          <Col m={7} s={12}>
-            <Card
-              horizontal
-              header={<CardTitle image="./assets/dewey.png" />}
-              actions={[<a href="#">This is a link</a>]}>
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information
-              </p>
-            </Card>
-          </Col>
-          <Col m={7} s={12}>
-            <Card
-              horizontal
-              header={<CardTitle image="./assets/huey.gif" />}
-              actions={[<a href="#">This is a link</a>]}>
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information
-              </p>
-            </Card>
-          </Col>
+          <Row>
+            <Col m={2} s={12}>
+              <Card
+                horizontal
+                header={<CardTitle image="./assets/louie.png" />}
+                actions={[<a href="#">This is a link</a>]}>
+                <p>
+                  I am a very simple card. I am good at containing small bits of
+                  information
+                </p>
+              </Card>
+            </Col>
+            <Col m={2} s={12}>
+              <Card
+                horizontal
+                header={<CardTitle image="./assets/dewey.png" />}
+                actions={[<a href="#">This is a link</a>]}>
+                <p>
+                  I am a very simple card. I am good at containing small bits of
+                  information
+                </p>
+              </Card>
+            </Col>
+            <Col m={2} s={12}>
+              <Card
+                horizontal
+                header={<CardTitle image="./assets/huey.gif" />}
+                actions={[<a href="#">This is a link</a>]}>
+                <p>
+                  I am a very simple card. I am good at containing small bits of
+                  information
+                </p>
+              </Card>
+            </Col>
+          </Row>
         </main>
       </div>
     );
