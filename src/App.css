@@ -17,6 +17,10 @@ p {
   font-size: 1rem;
 }
 
+.exchange {
+  padding-bottom: .5rem;
+}
+
 .address {
   margin-top: 0;
   padding-top: 0;
@@ -25,4 +29,8 @@ p {
   white-space: -pre-wrap; /* Opera <7 */
   white-space: -o-pre-wrap; /* Opera 7 */
   word-wrap: break-word;
+}
+
+Footer {
+  margin-top: 5rem;
 }
