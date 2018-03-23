@@ -13,6 +13,24 @@ import {
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      rates: []
+    };
+  }
+
+  componentDidMount() {
+    
+    fetch('https://hidden-everglades-48205.herokuapp.com/latest')
+    .then(response => response.json())
+    .then(response => {
+      let rates = response.rates;
+      this.setState({rates});
+      console.log("state", this.state.rates);
+    });
+  }
+
   render() {
     return (
       <div>
