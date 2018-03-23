@@ -2,6 +2,27 @@
   margin-top: 2rem;
 }
 
-h2 {
-  font-size: 2rem;
+.name,
+.currency {
+  font-size: 1.5rem;
+  display: inline;
+}
+
+.currency {
+  font-style: italic;
+}
+
+h3,
+p {
+  font-size: 1rem;
+}
+
+.address {
+  margin-top: 0;
+  padding-top: 0;
+  white-space: pre-wrap; /* CSS3 */
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -pre-wrap; /* Opera <7 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word;
 }
