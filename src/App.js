@@ -10,7 +10,6 @@ import {
   NavItem,
   Row
 } from 'react-materialize';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -35,7 +34,7 @@ class App extends Component {
               </Card>
               <Collapsible className="address">
                 <CollapsibleItem
-                  header="Huey's Bitcoin Address"
+                  header="Show Huey's Bitcoin Address"
                   icon="credit_card">
                   37Pu2KBsn2yEaHfqhwHAXD9BWpQtxUJn8R
                 </CollapsibleItem>
@@ -53,7 +52,7 @@ class App extends Component {
               </Card>
               <Collapsible className="address">
                 <CollapsibleItem
-                  header="Louie's Bitcoin Address"
+                  header="Show Louie's Bitcoin Address"
                   icon="credit_card">
                   3E6HuQeSqTtk4i88fTji73oN3NisTzU9R6
                 </CollapsibleItem>
@@ -71,7 +70,7 @@ class App extends Component {
               </Card>
               <Collapsible className="address">
                 <CollapsibleItem
-                  header="Dewey's Bitcoin Address"
+                  header="Show Dewey's Bitcoin Address"
                   icon="credit_card">
                   3BYsxrhEbLuC38YtQi5ZJSTeswFt55Fznn
                 </CollapsibleItem>
