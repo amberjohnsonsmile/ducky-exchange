@@ -80,39 +80,39 @@ class App extends Component {
         </main>
         <Footer
           className="amber darken-1"
-          copyrights="&copy 2015 Copyright Text"
+          copyrights="&copy; 2018 Amber Johnson"
           moreLinks={
-            <a className="grey-text text-lighten-4 right" href="#!">
-              More Links
+            <a className="right" href="https://github.com/amberjohnsonsmile/exchange">
+              View the code for this site
             </a>
           }
           links={
-            <ul>
+            <ul className="right links">
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
-                  Link 1
+                <a href="https://github.com/amberjohnsonsmile">
+                  Github
                 </a>
               </li>
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
-                  Link 2
+                <a href="https://www.linkedin.com/in/amberjohnsonsmile/">
+                  LinkedIn
                 </a>
               </li>
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
-                  Link 3
+                <a href="https://amberjohnsonsmile.co/">
+                  Portfolio
                 </a>
               </li>
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
-                  Link 4
+                <a href="mailto:amberjohnsonsmile@gmail.com">
+                  Email
                 </a>
               </li>
             </ul>
           }>
-          <h5 className="white-text">Footer Content</h5>
-          <p className="grey-text text-lighten-4">
-            You can use rows and columns here to organize your footer content.
+          <h5>Ducky Exchange by Amber Johnson</h5>
+          <p>
+            The Ducky Exchange pulls live rate updates from the Bittrex, CoinCap, Kraken, and Poloniex APIs every five minutes.
           </p>
         </Footer>
       </div>
