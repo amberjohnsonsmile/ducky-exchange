@@ -16,19 +16,30 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      rates: []
+      dashRate: {},
+      ethRate: {},
+      ltcRate: {}
     };
   }
 
   componentDidMount() {
-    
-    fetch('https://hidden-everglades-48205.herokuapp.com/latest')
-    .then(response => response.json())
-    .then(response => {
-      let rates = response.rates;
-      this.setState({rates});
-      console.log("state", this.state.rates);
-    });
+    fetch('https://hidden-everglades-48205.herokuapp.com/latest-dash')
+      .then(response => response.json())
+      .then(response => {
+        this.setState({dashRate: response});
+      });
+
+    fetch('https://hidden-everglades-48205.herokuapp.com/latest-eth')
+      .then(response => response.json())
+      .then(response => {
+        this.setState({ethRate: response});
+      });
+
+    fetch('https://hidden-everglades-48205.herokuapp.com/latest-ltc')
+      .then(response => response.json())
+      .then(response => {
+        this.setState({ltcRate: response});
+      });
   }
 
   render() {
@@ -46,9 +57,9 @@ class App extends Component {
               <Card horizontal header={<CardTitle image="./assets/huey.png" />}>
                 <h2 className="name">Huey - </h2>
                 <h2 className="currency">Ethereum</h2>
-                <h3>Kraken currently offers the best exchange:</h3>
-                <p className="exchange">1 Ethereum = 0.061309 Bitcoin</p>
-                <p>For 5 Bitcoin, Donald can buy Huey 81.55 Etehereum.</p>
+                <h3>{this.state.ethRate.source} currently offers the best exchange:</h3>
+                <p className="exchange">1 Ethereum = {this.state.ethRate.bestRate} Bitcoin</p>
+                <p>For 5 Bitcoin, Donald can buy Huey {(5 / this.state.ethRate.bestRate).toFixed(2)} Etehereum.</p>
               </Card>
               <Collapsible className="address">
                 <CollapsibleItem
@@ -64,9 +75,9 @@ class App extends Component {
                 header={<CardTitle image="./assets/louie.png" />}>
                 <h2 className="name">Louie - </h2>
                 <h2 className="currency">Litecoin</h2>
-                <h3>Kraken currently offers the best exchange:</h3>
-                <p className="exchange">1 Litecoin = 0.0188195 Bitcoin</p>
-                <p>For 5 Bitcoin, Donald can buy Louie 265.68 Litecoin.</p>
+                <h3>{this.state.ltcRate.source} currently offers the best exchange:</h3>
+                <p className="exchange">1 Litecoin = {this.state.ltcRate.bestRate} Bitcoin</p>
+                <p>For 5 Bitcoin, Donald can buy Louie {(5 / this.state.ltcRate.bestRate).toFixed(2)} Litecoin.</p>
               </Card>
               <Collapsible className="address">
                 <CollapsibleItem
@@ -82,9 +93,9 @@ class App extends Component {
                 header={<CardTitle image="./assets/dewey.png" />}>
                 <h2 className="name">Dewey - </h2>
                 <h2 className="currency">Dash</h2>
-                <h3>Poloniex currently offers the best exchange:</h3>
-                <p className="exchange">1 Dash = 0.04727 Bitcoin</p>
-                <p>For 5 Bitcoin, Donald can buy Dewey 105.78 Dash.</p>
+                <h3>{this.state.dashRate.source} currently offers the best exchange:</h3>
+                <p className="exchange">1 Dash = {this.state.dashRate.bestRate} Bitcoin</p>
+                <p>For 5 Bitcoin, Donald can buy Dewey {(5 / this.state.dashRate.bestRate).toFixed(2)} Dash.</p>
               </Card>
               <Collapsible className="address">
                 <CollapsibleItem
@@ -100,16 +111,16 @@ class App extends Component {
           className="amber darken-1"
           copyrights="&copy; 2018 Amber Johnson"
           moreLinks={
-            <a className="right" href="https://github.com/amberjohnsonsmile/exchange">
+            <a
+              className="right"
+              href="https://github.com/amberjohnsonsmile/exchange">
               View the code for this site
             </a>
           }
           links={
             <ul className="right links">
               <li>
-                <a href="https://github.com/amberjohnsonsmile">
-                  Github
-                </a>
+                <a href="https://github.com/amberjohnsonsmile">Github</a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/amberjohnsonsmile/">
@@ -117,20 +128,17 @@ class App extends Component {
                 </a>
               </li>
               <li>
-                <a href="https://amberjohnsonsmile.co/">
-                  Portfolio
-                </a>
+                <a href="https://amberjohnsonsmile.co/">Portfolio</a>
               </li>
               <li>
-                <a href="mailto:amberjohnsonsmile@gmail.com">
-                  Email
-                </a>
+                <a href="mailto:amberjohnsonsmile@gmail.com">Email</a>
               </li>
             </ul>
           }>
           <h5>Ducky Exchange by Amber Johnson</h5>
           <p>
-            The Ducky Exchange pulls live rate updates from the Bittrex, CoinCap, Kraken, and Poloniex APIs every five minutes.
+            The Ducky Exchange pulls live rate updates from the Bittrex,
+            CoinCap, Kraken, and Poloniex APIs every five minutes.
           </p>
         </Footer>
       </div>
