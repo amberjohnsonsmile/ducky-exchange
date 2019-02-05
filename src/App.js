@@ -54,7 +54,7 @@ class App extends Component {
         <main>
           <Row className="cards">
             <Col l={4} m={6} s={12}>
-              <Card horizontal header={<CardTitle image="./assets/huey.png" />}>
+              <Card horizontal="true" header={<CardTitle image="./assets/huey.png" />}>
                 <h2 className="name">Huey - </h2>
                 <h2 className="currency">Ethereum</h2>
                 <h3>{this.state.ethRate.source} currently offers the best exchange:</h3>
@@ -71,7 +71,7 @@ class App extends Component {
             </Col>
             <Col l={4} m={6} s={12}>
               <Card
-                horizontal
+                horizontal="true"
                 header={<CardTitle image="./assets/louie.png" />}>
                 <h2 className="name">Louie - </h2>
                 <h2 className="currency">Litecoin</h2>
@@ -89,7 +89,7 @@ class App extends Component {
             </Col>
             <Col l={4} m={6} s={12}>
               <Card
-                horizontal
+                horizontal="true"
                 header={<CardTitle image="./assets/dewey.png" />}>
                 <h2 className="name">Dewey - </h2>
                 <h2 className="currency">Dash</h2>
